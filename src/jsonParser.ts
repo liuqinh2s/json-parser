@@ -126,13 +126,13 @@ export default class JsonParser {
     }
   }
 
-  f(s: string): string {
-    console.log(s);
-    return String.fromCodePoint(+s);
-  }
-
   // 对unicode字符进行转码
-  replacer(match: string, group: RegExp, index: number, all: string): string {
+  private replacer(
+    match: string,
+    group: RegExp,
+    index: number,
+    all: string
+  ): string {
     console.log(match, group, index, all);
     return String.fromCodePoint(+("0x" + group));
   }
